@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Spotify UI Clone • Home</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body data-page="home">
+
+  <header class="mobile-top">
+    <button class="icon-btn" id="openSidebar" aria-label="Open menu">☰</button>
+    <div class="mobile-logo">Spotify</div>
+    <button class="icon-btn" aria-label="Profile">☺</button>
+  </header>
+
+  <div class="app">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-top">
+        <div class="brand"><span class="dot"></span> Spotify</div>
+        <button class="icon-btn close-btn" id="closeSidebar" aria-label="Close menu">×</button>
+      </div>
+
+      <nav class="nav">
+        <a class="nav-item" data-page="home" href="index.html">⌂ Home</a>
+        <a class="nav-item" data-page="search" href="search.html">⌕ Search</a>
+        <a class="nav-item" data-page="library" href="library.html">▦ Your Library</a>
+      </nav>
+
+      <div class="sidebar-section">
+        <div class="section-title">Playlists</div>
+        <div class="playlist-list" id="sidebarPlaylists"></div>
+      </div>
+
+      <div class="sidebar-footer">
+        <button class="ghost">Install App</button>
+        <div class="small">UI Clone • No audio</div>
+      </div>
+    </aside>
+
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Main -->
+    <main class="main">
+      <div class="topbar" id="topbar">
+        <div class="topbar-left">
+          <button class="circle-btn" aria-label="Back">‹</button>
+          <button class="circle-btn" aria-label="Forward">›</button>
+          <div class="search">
+            <span>⌕</span>
+            <input id="searchInput" type="text" placeholder="Try Ctrl/⌘ + K (Search page)"/>
+          </div>
+        </div>
+        <div class="topbar-right">
+          <button class="theme-toggle" id="themeToggle">Dark</button>
+          <button class="btn">Upgrade</button>
+          <button class="profile"><span class="avatar">U</span> Umme</button>
+        </div>
+      </div>
+
+      <section class="content" id="contentScroll">
+        <div class="header-row">
+          <h1>Good evening</h1>
+          <div class="chips">
+            <button class="chip active" data-filter="all">All</button>
+            <button class="chip" data-filter="mix">Mixes</button>
+            <button class="chip" data-filter="album">Albums</button>
+            <button class="chip" data-filter="playlist">Playlists</button>
+          </div>
+        </div>
+
+        <div class="grid-quick">
+          <button class="quick-card" data-playlist-id="liked">
+            <div class="qc-cover cover-liked"></div>
+            <div class="qc-meta">
+              <div class="qc-title">Liked Songs</div>
+              <div class="qc-sub">Playlist</div>
+            </div>
+            <span class="qc-play">▶</span>
+          </button>
+
+          <button class="quick-card" data-playlist-id="mix1">
+            <div class="qc-cover cover-mix1"></div>
+            <div class="qc-meta">
+              <div class="qc-title">Daily Mix 1</div>
+              <div class="qc-sub">Mix</div>
+            </div>
+            <span class="qc-play">▶</span>
+          </button>
+
+          <button class="quick-card" data-playlist-id="mix2">
+            <div class="qc-cover cover-mix2"></div>
+            <div class="qc-meta">
+              <div class="qc-title">Daily Mix 2</div>
+              <div class="qc-sub">Mix</div>
+            </div>
+            <span class="qc-play">▶</span>
+          </button>
+
+          <button class="quick-card" data-playlist-id="chill">
+            <div class="qc-cover cover-chill"></div>
+            <div class="qc-meta">
+              <div class="qc-title">Chill Vibes</div>
+              <div class="qc-sub">Playlist</div>
+            </div>
+            <span class="qc-play">▶</span>
+          </button>
+
+          <button class="quick-card" data-playlist-id="focus">
+            <div class="qc-cover cover-focus"></div>
+            <div class="qc-meta">
+              <div class="qc-title">Focus Flow</div>
+              <div class="qc-sub">Playlist</div>
+            </div>
+            <span class="qc-play">▶</span>
+          </button>
+
+          <button class="quick-card" data-playlist-id="hits">
+            <div class="qc-cover cover-hits"></div>
+            <div class="qc-meta">
+              <div class="qc-title">Top Hits</div>
+              <div class="qc-sub">Playlist</div>
+            </div>
+            <span class="qc-play">▶</span>
+          </button>
+        </div>
+
+        <div class="section">
+          <div class="section-head">
+            <h2>Made for you</h2>
+            <button class="link">Show all</button>
+          </div>
+
+          <div class="cards">
+            <article class="card" data-playlist-id="lofi" data-type="playlist">
+              <div class="cover cover-lofi"></div>
+              <div class="card-title">Lo-Fi Beats</div>
+              <div class="card-sub">Chill instrumental beats.</div>
+              <button class="play-fab" aria-label="Play">▶</button>
+            </article>
+
+            <article class="card" data-playlist-id="deep" data-type="playlist">
+              <div class="cover cover-deep"></div>
+              <div class="card-title">Deep Focus</div>
+              <div class="card-sub">Focus music to work.</div>
+              <button class="play-fab" aria-label="Play">▶</button>
+            </article>
+
+            <article class="card" data-playlist-id="mix1" data-type="mix">
+              <div class="cover cover-mix1"></div>
+              <div class="card-title">Daily Mix 1</div>
+              <div class="card-sub">Your mix of the day.</div>
+              <button class="play-fab" aria-label="Play">▶</button>
+            </article>
+
+            <article class="card" data-playlist-id="acoustic" data-type="album">
+              <div class="cover cover-acoustic"></div>
+              <div class="card-title">Evening Acoustic</div>
+              <div class="card-sub">Soft acoustic moods.</div>
+              <button class="play-fab" aria-label="Play">▶</button>
+            </article>
+
+            <article class="card" data-playlist-id="workout" data-type="playlist">
+              <div class="cover cover-workout"></div>
+              <div class="card-title">Workout Energy</div>
+              <div class="card-sub">High energy tracks.</div>
+              <button class="play-fab" aria-label="Play">▶</button>
+            </article>
+
+            <article class="card" data-playlist-id="throwbacks" data-type="playlist">
+              <div class="cover cover-throwbacks"></div>
+              <div class="card-title">Throwbacks</div>
+              <div class="card-sub">Old school favorites.</div>
+              <button class="play-fab" aria-label="Play">▶</button>
+            </article>
+          </div>
+        </div>
+
+        <footer class="main-footer">
+          <div>Spotify UI clone for learning.</div>
+          <div>No affiliation with Spotify.</div>
+        </footer>
+      </section>
+    </main>
+  </div>
+
+  <!-- Queue Drawer -->
+  <aside class="queue" id="queue">
+    <div class="queue-head">
+      <div class="queue-title">Queue</div>
+      <div class="queue-actions">
+        <button class="icon-btn" id="clearQueue" title="Clear queue">🗑</button>
+        <button class="icon-btn" id="closeQueue" aria-label="Close queue">×</button>
+      </div>
+    </div>
+    <div class="queue-body" id="queueBody"></div>
+  </aside>
+  <div class="queue-overlay" id="queueOverlay"></div>
+
+  <!-- Player Bar -->
+  <div class="player">
+
+  <!-- LEFT -->
+  <div class="player-left">
+    <div class="track-art cover-lofi" id="trackArt"></div>
+
+    <div class="track-info">
+      <div class="track-title marquee" id="trackTitle">
+        <span>Midnight Tape • Midnight Tape •</span>
+      </div>
+      <div class="track-artist" id="trackArtist">Lo-Fi Lab</div>
+    </div>
+
+    <button class="icon-btn" id="likeNow">♡</button>
+  </div>
+
+
+  <!-- CENTER -->
+  <div class="player-center">
+
+    <div class="controls">
+      <button class="icon-btn" id="shuffleBtn">🔀</button>
+      <button class="icon-btn" id="prevBtn">⏮</button>
+      <button class="play-btn" id="playBtn">▶</button>
+      <button class="icon-btn" id="nextBtn">⏭</button>
+      <button class="icon-btn" id="repeatBtn">🔁</button>
+    </div>
+
+    <div class="timeline">
+
+      <span class="time" id="curTime">0:00</span>
+
+      <div class="progress-wrap" id="progressWrap">
+
+        <div class="progress-bars">
+          <div class="progress-buffer"></div>
+          <div class="progress-played"></div>
+        </div>
+
+        <input id="progress" type="range" min="0" max="100" value="0">
+
+        <div class="seek-tip" id="seekTip">0:00</div>
+
+      </div>
+
+      <span class="time" id="durTime">0:00</span>
+
+    </div>
+
+  </div>
+
+
+  <!-- RIGHT -->
+  <div class="player-right">
+
+    <button id="openQueue">☰</button>
+
+    <div class="volume">
+      🔊
+      <input id="volume" type="range" min="0" max="100" value="70">
+    </div>
+
+  </div>
+
+</div>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

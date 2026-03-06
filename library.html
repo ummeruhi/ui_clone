@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Spotify UI Clone • Library</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body data-page="library">
+
+  <header class="mobile-top">
+    <button class="icon-btn" id="openSidebar" aria-label="Open menu">☰</button>
+    <div class="mobile-logo">Library</div>
+    <button class="icon-btn" aria-label="Profile">☺</button>
+  </header>
+
+  <div class="app">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-top">
+        <div class="brand"><span class="dot"></span> Spotify</div>
+        <button class="icon-btn close-btn" id="closeSidebar" aria-label="Close menu">×</button>
+      </div>
+
+      <nav class="nav">
+        <a class="nav-item" data-page="home" href="index.html">⌂ Home</a>
+        <a class="nav-item" data-page="search" href="search.html">⌕ Search</a>
+        <a class="nav-item" data-page="library" href="library.html">▦ Your Library</a>
+      </nav>
+
+      <div class="sidebar-section">
+        <div class="section-title">Playlists</div>
+        <div class="playlist-list" id="sidebarPlaylists"></div>
+      </div>
+
+      <div class="sidebar-footer">
+        <button class="ghost">Install App</button>
+        <div class="small">UI Clone • Library</div>
+      </div>
+    </aside>
+
+    <div class="overlay" id="overlay"></div>
+
+    <main class="main">
+      <div class="topbar" id="topbar">
+        <div class="topbar-left">
+          <button class="circle-btn" aria-label="Back">‹</button>
+          <button class="circle-btn" aria-label="Forward">›</button>
+          <div class="search">
+            <span>⌕</span>
+            <input id="searchInput" type="text" placeholder="Library (UI only)"/>
+          </div>
+        </div>
+        <div class="topbar-right">
+          <button class="theme-toggle" id="themeToggle">Dark</button>
+          <button class="btn">Upgrade</button>
+          <button class="profile"><span class="avatar">U</span> Umme</button>
+        </div>
+      </div>
+
+      <section class="content" id="contentScroll">
+        <div class="header-row">
+          <h1>Your Library</h1>
+          <div class="badge">Playlists • Mixes • Albums</div>
+        </div>
+
+        <div class="section">
+          <div class="section-head">
+            <h2>Saved</h2>
+            <button class="link">Sort</button>
+          </div>
+
+          <div class="cards" id="libraryGrid"></div>
+        </div>
+
+        <footer class="main-footer">
+          <div>Tip: click a card to open playlist</div>
+          <div>Play button starts playlist (UI only)</div>
+        </footer>
+      </section>
+    </main>
+  </div>
+
+  <aside class="queue" id="queue">
+    <div class="queue-head">
+      <div class="queue-title">Queue</div>
+      <div class="queue-actions">
+        <button class="icon-btn" id="clearQueue" title="Clear queue">🗑</button>
+        <button class="icon-btn" id="closeQueue" aria-label="Close queue">×</button>
+      </div>
+    </div>
+    <div class="queue-body" id="queueBody"></div>
+  </aside>
+  <div class="queue-overlay" id="queueOverlay"></div>
+
+  <div class="player">
+
+  <!-- LEFT -->
+  <div class="player-left">
+    <div class="track-art cover-lofi" id="trackArt"></div>
+
+    <div class="track-info">
+      <div class="track-title marquee" id="trackTitle">
+        <span>Midnight Tape • Midnight Tape •</span>
+      </div>
+      <div class="track-artist" id="trackArtist">Lo-Fi Lab</div>
+    </div>
+
+    <button class="icon-btn" id="likeNow">♡</button>
+  </div>
+
+
+  <!-- CENTER -->
+  <div class="player-center">
+
+    <div class="controls">
+      <button class="icon-btn" id="shuffleBtn">🔀</button>
+      <button class="icon-btn" id="prevBtn">⏮</button>
+      <button class="play-btn" id="playBtn">▶</button>
+      <button class="icon-btn" id="nextBtn">⏭</button>
+      <button class="icon-btn" id="repeatBtn">🔁</button>
+    </div>
+
+    <div class="timeline">
+
+      <span class="time" id="curTime">0:00</span>
+
+      <div class="progress-wrap" id="progressWrap">
+
+        <div class="progress-bars">
+          <div class="progress-buffer"></div>
+          <div class="progress-played"></div>
+        </div>
+
+        <input id="progress" type="range" min="0" max="100" value="0">
+
+        <div class="seek-tip" id="seekTip">0:00</div>
+
+      </div>
+
+      <span class="time" id="durTime">0:00</span>
+
+    </div>
+
+  </div>
+
+
+  <!-- RIGHT -->
+  <div class="player-right">
+
+    <button id="openQueue">☰</button>
+
+    <div class="volume">
+      🔊
+      <input id="volume" type="range" min="0" max="100" value="70">
+    </div>
+
+  </div>
+
+</div>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

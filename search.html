@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Spotify UI Clone • Search</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body data-page="search">
+
+  <!-- SVG Sprite: Copy SAME sprite from index.html (icons) -->
+  <!-- To keep message shorter: paste the SAME <svg> sprite block from index.html here. -->
+  <!-- IMPORTANT: It must be present on each page for <use href="#..."> to work. -->
+  <!-- ✅ Copy-paste that sprite block here. -->
+
+  <div class="skeleton" id="skeleton">
+    <div class="block row"></div>
+    <div class="grid">
+      <div class="block sidebar"></div>
+      <div class="block main"></div>
+    </div>
+    <div class="block player"></div>
+  </div>
+
+  <header class="mobile-top">
+    <button class="icon-btn" id="openSidebar" aria-label="Open menu"></button>
+    <div class="mobile-logo">Search</div>
+    <button class="icon-btn" id="openSettings" aria-label="Settings"></button>
+  </header>
+
+  <div class="app">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-top">
+        <div class="brand"><span class="dot"></span> Spotify</div>
+        <button class="icon-btn close-btn" id="closeSidebar" aria-label="Close menu"></button>
+      </div>
+
+      <nav class="nav">
+        <a class="nav-item" data-page="home" href="index.html">Home</a>
+        <a class="nav-item" data-page="search" href="search.html">Search</a>
+        <a class="nav-item" data-page="library" href="library.html">Your Library</a>
+      </nav>
+
+      <div class="sidebar-section">
+        <div class="section-title">Playlists</div>
+        <div class="playlist-list" id="sidebarPlaylists"></div>
+      </div>
+
+      <div class="sidebar-footer">
+        <button class="btn" style="background:transparent;color:inherit;border:1px solid rgba(127,127,127,.22)">Install App</button>
+        <div class="small">Tip: Ctrl/⌘ + K focus search</div>
+      </div>
+    </aside>
+
+    <div class="overlay" id="overlay"></div>
+
+    <main class="main">
+      <div class="topbar" id="topbar">
+        <div class="topbar-left">
+          <button class="circle-btn" aria-label="Back" onclick="history.back()">‹</button>
+          <button class="circle-btn" aria-label="Forward" onclick="history.forward()">›</button>
+
+          <div class="search">
+            <svg class="ico sm"><use href="#i-search"></use></svg>
+            <input id="searchInput" type="text" placeholder="Search songs or artists..."/>
+          </div>
+        </div>
+        <div class="topbar-right">
+          <button class="settings-btn" id="openSettings">Settings</button>
+          <button class="theme-toggle" id="themeToggle">Dark</button>
+          <button class="btn">Upgrade</button>
+          <button class="profile"><span class="avatar">U</span> Umme</button>
+        </div>
+      </div>
+
+      <section class="content" id="contentScroll">
+        <div class="header-row">
+          <h1>Search</h1>
+          <div class="badge">UI Only</div>
+        </div>
+
+        <div class="section">
+          <div class="section-head"><h2>Recent searches</h2></div>
+          <div class="recent-wrap" id="recentWrap"></div>
+        </div>
+
+        <div id="searchEmpty" class="queue-empty" style="display:none; margin:10px 0;">
+          No results found
+        </div>
+
+        <div class="section">
+          <div class="section-head"><h2>Top Result</h2></div>
+          <div id="topResult"></div>
+        </div>
+
+        <div class="search-grid section">
+          <div>
+            <div class="section-head"><h2>Songs</h2></div>
+            <div id="songList"></div>
+          </div>
+          <div>
+            <div class="section-head"><h2>Artists</h2></div>
+            <div id="artistList"></div>
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="section-head"><h2>Browse all</h2></div>
+          <div class="cat-grid" id="catGrid"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Settings Modal / Queue / Player -->
+  <!-- ✅ Copy these blocks from index.html exactly (same IDs) -->
+  <!-- To keep this message compact, reuse the same modal + queue + player HTML from index.html -->
+  <!-- IMPORTANT: IDs must match for JS. -->
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
