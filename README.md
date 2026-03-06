@@ -141,7 +141,6 @@ Computer Science & Engineering Student
 Full Stack Web Development Enthusiast
 
 GitHub: https://github.com/ummeruhi
-LinkedIn: https://linkedin.com/in/ummeruhi
 
 ---
 
